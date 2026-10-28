@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="rentcar.controller.RentalFormController"
+          hgap="8" vgap="8" padding="16">
+
+    <Label text="Клиент:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="clientCombo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="Автомобиль:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="carCombo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Дата начала:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="startPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="Дата окончания:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="endPicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="Статус:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="statusCombo" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Button text="Сохранить" onAction="#save"
+            GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+</GridPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="rentcar.controller.StatisticsController"
+      spacing="6" padding="16">
+    <Label text="Статистика" styleClass="title"/>
+    <Label fx:id="totalClients"/>
+    <Label fx:id="totalCars"/>
+    <Label fx:id="totalRentals"/>
+    <Label fx:id="activeRentals"/>
+    <Label fx:id="availableCars"/>
+    <Label fx:id="avgRentalPrice"/>
+    <Label fx:id="totalIncome"/>
+</VBox>

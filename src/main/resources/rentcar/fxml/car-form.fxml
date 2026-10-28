@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="rentcar.controller.CarFormController"
+          hgap="8" vgap="8" padding="16">
+
+    <Label text="Марка:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="brandField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="Модель:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="modelField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Госномер:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="plateField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="Год:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="yearField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="Цена/сутки:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="priceField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Label text="Статус:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="statusCombo" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <Button text="Сохранить" onAction="#save"
+            GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+</GridPane>

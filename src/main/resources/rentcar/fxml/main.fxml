@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="rentcar.controller.MainController">
+
+    <top>
+        <HBox spacing="8" styleClass="toolbar">
+            <Button text="Обновить" onAction="#refreshAll"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Статистика" onAction="#showStatistics"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Автомобили">
+                <VBox spacing="8" styleClass="content">
+                    <HBox spacing="8">
+                        <TextField fx:id="carSearchField" promptText="Марка/модель/номер"/>
+                        <ComboBox fx:id="carFilterStatus" promptText="Статус"/>
+                        <ComboBox fx:id="carSortField" promptText="Сортировка"/>
+                        <Button text="Применить" onAction="#applyCarSearch"/>
+                        <Button text="Экспорт" onAction="#exportCars"/>
+                    </HBox>
+                    <TableView fx:id="carTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colCarId" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="colCarBrand" text="Марка" prefWidth="120"/>
+                            <TableColumn fx:id="colCarModel" text="Модель" prefWidth="120"/>
+                            <TableColumn fx:id="colCarPlate" text="Госномер" prefWidth="110"/>
+                            <TableColumn fx:id="colCarYear" text="Год" prefWidth="70"/>
+                            <TableColumn fx:id="colCarPrice" text="Цена" prefWidth="90"/>
+                            <TableColumn fx:id="colCarStatus" text="Статус" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="8">
+                        <Button text="Добавить" onAction="#addCar"/>
+                        <Button text="Редактировать" onAction="#editCar"/>
+                        <Button text="Удалить" onAction="#deleteCar"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+            <Tab text="Клиенты">
+                <VBox spacing="8" styleClass="content">
+                    <HBox spacing="8">
+                        <TextField fx:id="clientSearchField" promptText="ФИО или паспорт"/>
+                        <Button text="Найти" onAction="#applyClientSearch"/>
+                        <Button text="Экспорт" onAction="#exportClients"/>
+                    </HBox>
+                    <TableView fx:id="clientTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colClientId" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="colClientName" text="ФИО" prefWidth="250"/>
+                            <TableColumn fx:id="colClientPassport" text="Паспорт" prefWidth="130"/>
+                            <TableColumn fx:id="colClientPhone" text="Телефон" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="8">
+                        <Button text="Добавить" onAction="#addClient"/>
+                        <Button text="Редактировать" onAction="#editClient"/>
+                        <Button text="Удалить" onAction="#deleteClient"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+            <Tab text="Аренды">
+                <VBox spacing="8" styleClass="content">
+                    <HBox spacing="8">
+                        <ComboBox fx:id="rentalFilterStatus" promptText="Статус"/>
+                        <Button text="Фильтр" onAction="#applyRentalFilter"/>
+                        <Button text="Экспорт" onAction="#exportRentals"/>
+                    </HBox>
+                    <TableView fx:id="rentalTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colRentalId" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="colRentalClient" text="Клиент" prefWidth="70"/>
+                            <TableColumn fx:id="colRentalCar" text="Авто" prefWidth="70"/>
+                            <TableColumn fx:id="colRentalStart" text="Начало" prefWidth="110"/>
+                            <TableColumn fx:id="colRentalEnd" text="Окончание" prefWidth="110"/>
+                            <TableColumn fx:id="colRentalTotal" text="Сумма" prefWidth="100"/>
+                            <TableColumn fx:id="colRentalStatus" text="Статус" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="8">
+                        <Button text="Добавить" onAction="#addRental"/>
+                        <Button text="Редактировать" onAction="#editRental"/>
+                        <Button text="Завершить" onAction="#completeRental"/>
+                        <Button text="Удалить" onAction="#deleteRental"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>
